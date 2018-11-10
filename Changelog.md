@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.2 (2018-11-10)
+* Fixed description in .plugin file
+
 ## 0.2.1 (2018-11-10)
 * Fixed version number in .plugin file
 
