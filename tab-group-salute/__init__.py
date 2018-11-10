@@ -24,60 +24,74 @@ gi.require_version('Gtk', '3.0')
 gi.require_version('Gedit', '3.0')
 
 from gi.repository import GObject, Gdk, Gtk, Gedit
+from .utils import connect_handlers, disconnect_handlers
+from . import log
+
+CONTROL_MASK = Gdk.ModifierType.CONTROL_MASK
+CONTROL_SHIFT_MASK = Gdk.ModifierType.CONTROL_MASK | Gdk.ModifierType.SHIFT_MASK
 
 
-class TabGroupSaluteAppActivatable(GObject.Object, Gedit.AppActivatable):
+class TabGroupSaluteWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
-	__gtype_name__ = 'TabGroupSaluteAppActivatable'
+	__gtype_name__ = 'TabGroupSaluteWindowActivatable'
 
-	app = GObject.Property(type=Gedit.App)
+	window = GObject.Property(type=Gedit.Window)
 
 
 	def __init__(self):
 		GObject.Object.__init__(self)
 
 	def do_activate(self):
-		app = self.app
+		if log.query(log.INFO):
+			Gedit.debug_plugin_message(log.format("%s", self.window))
 
-		binding_set = Gtk.binding_set_find('GeditView')
-		Gtk.binding_entry_remove(
-			binding_set,
-			Gdk.KEY_asciitilde,
-			Gdk.ModifierType.CONTROL_MASK
+		connect_handlers(
+			self, self.window,
+			['key-press-event'],
+			'window'
 		)
-
-		prev_accels = app.get_accels_for_action('win.previous-tab-group');
-		next_accels = app.get_accels_for_action('win.next-tab-group');
-
-		app.set_accels_for_action(
-			'win.previous-tab-group',
-			prev_accels + ['<Control>asciitilde']
-		)
-		app.set_accels_for_action(
-			'win.next-tab-group',
-			next_accels + ['<Control>grave']
-		)
-
-		self._prev_accels = prev_accels
-		self._next_accels = next_accels
 
 	def do_deactivate(self):
-		app = self.app
+		if log.query(log.INFO):
+			Gedit.debug_plugin_message(log.format("%s", self.window))
 
-		app.set_accels_for_action(
-			'win.previous-tab-group',
-			self._prev_accels
-		)
-		app.set_accels_for_action(
-			'win.next-tab-group',
-			self._next_accels
-		)
+		disconnect_handlers(self, self.window)
 
-		binding_set = Gtk.binding_set_find('GeditView')
-		Gtk.binding_entry_add_signal_from_string(
-			binding_set,
-			'bind "<Control>asciitilde" { "change_case" (GTK_SOURCE_CHANGE_CASE_TOGGLE) }'
-		)
+	def do_update_state(self):
+		pass
 
-		self._prev_accels = None
-		self._next_accels = None
+
+	def on_window_key_press_event(self, window, event):
+		if log.query(log.INFO):
+			Gedit.debug_plugin_message(log.format("%s, key=%s", window, Gdk.keyval_name(event.keyval)))
+
+		# we assume the key above tab has the keycode 49
+		# see https://gitlab.gnome.org/GNOME/metacity/blob/master/src/core/above-tab-keycode.c
+
+		if event.hardware_keycode != 49:
+			if log.query(log.DEBUG):
+				Gedit.debug_plugin_message(log.format("keycode is %s, skipping", event.hardware_keycode))
+
+			return False
+
+		action_name = None
+		state = event.state & Gtk.accelerator_get_default_mod_mask()
+
+		if state == CONTROL_MASK:
+			action_name = 'next-tab-group'
+		elif state == CONTROL_SHIFT_MASK:
+			action_name = 'previous-tab-group'
+
+		if action_name is None:
+			if log.query(log.DEBUG):
+				Gedit.debug_plugin_message(log.format("neither ctrl nor ctrl+shift held, skipping"))
+
+			return False
+
+		if log.query(log.DEBUG):
+			Gedit.debug_plugin_message(log.format("activating %s", action_name))
+
+		window.lookup_action(action_name).activate()
+
+		return True
+
