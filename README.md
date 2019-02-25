@@ -34,7 +34,10 @@ These shortcuts may override the "invert case" shortcut
 (<kbd>Ctrl</kbd>+<kbd>~</kbd>), if the key above the <kbd>Tab</kbd> key
 produces the tilde symbol.
 
-## Development
+## Contributing
+
+Please base changes on, and open pull requests against, the `develop`
+branch.
 
 The code in `tab-group-salute/utils` comes from [python-gtk-utils][];
 changes should ideally be contributed to that project, then pulled back
