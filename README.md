@@ -7,6 +7,8 @@ Switch between tab groups using Ctrl+\<key above Tab\>
 All bug reports, feature requests and miscellaneous comments are welcome
 at the [project issue tracker][].
 
+[project issue tracker]: https://github.com/jefferyto/gedit-tab-group-salute/issues
+
 ## Requirements
 
 This plugin requires gedit 3.12 or newer.
@@ -19,6 +21,9 @@ This plugin requires gedit 3.12 or newer.
     exist).
 3.  Restart gedit, then activate the plugin in the **Plugins** tab in
     gedit's **Preferences** window.
+
+[zip]: https://github.com/jefferyto/gedit-tab-group-salute/archive/master.zip
+[tar.gz]: https://github.com/jefferyto/gedit-tab-group-salute/archive/master.tar.gz
 
 ## Usage
 
@@ -43,22 +48,19 @@ The code in `tab-group-salute/utils` comes from [python-gtk-utils][];
 changes should ideally be contributed to that project, then pulled back
 into this one with `git subtree pull`.
 
+[python-gtk-utils]: https://github.com/jefferyto/python-gtk-utils
+
 ## Credits
 
 Inspired by:
 
 *   A [request for help][] with [Control Your Tabs][]
 
+[request for help]: https://github.com/jefferyto/gedit-control-your-tabs/issues/11
+[Control Your Tabs]: https://github.com/jefferyto/gedit-control-your-tabs
+
 ## License
 
 Copyright &copy; 2018 Jeffery To <jeffery.to@gmail.com>
 
 Available under GNU General Public License version 3
-
-
-[project issue tracker]: https://github.com/jefferyto/gedit-tab-group-salute/issues
-[zip]: https://github.com/jefferyto/gedit-tab-group-salute/archive/master.zip
-[tar.gz]: https://github.com/jefferyto/gedit-tab-group-salute/archive/master.tar.gz
-[python-gtk-utils]: https://github.com/jefferyto/python-gtk-utils
-[request for help]: https://github.com/jefferyto/gedit-control-your-tabs/issues/11
-[Control Your Tabs]: https://github.com/jefferyto/gedit-control-your-tabs
