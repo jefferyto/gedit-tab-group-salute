@@ -15,15 +15,14 @@ This plugin requires gedit 3.12 or newer.
 
 ## Installation
 
-1.  Download the source code (as [zip][] or [tar.gz][]) and extract.
+1.  Download the [latest release][] and extract.
 2.  Copy the `tab-group-salute` folder and the `tab-group-salute.plugin`
     file into `~/.local/share/gedit/plugins` (create if it does not
     exist).
 3.  Restart gedit, then activate the plugin in the **Plugins** tab in
     gedit's **Preferences** window.
 
-[zip]: https://github.com/jefferyto/gedit-tab-group-salute/archive/master.zip
-[tar.gz]: https://github.com/jefferyto/gedit-tab-group-salute/archive/master.tar.gz
+[latest release]: https://github.com/jefferyto/gedit-tab-group-salute/releases/latest
 
 ## Usage
 
@@ -40,9 +39,6 @@ These shortcuts may override the "invert case" shortcut
 produces the tilde symbol.
 
 ## Contributing
-
-Please base changes on, and open pull requests against, the `develop`
-branch.
 
 The code in `tab-group-salute/utils` comes from [python-gtk-utils][];
 changes should ideally be contributed to that project, then pulled back
