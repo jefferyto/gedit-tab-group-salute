@@ -4,8 +4,11 @@ Switch between tab groups using Ctrl+\<key above Tab\>
 <https://github.com/jefferyto/gedit-tab-group-salute>  
 0.2.3-dev
 
-All bug reports, feature requests and miscellaneous comments are welcome
-at the [project issue tracker][].
+All bug reports, feature requests, and miscellaneous comments are
+welcome at the [project issue tracker].
+
+Be sure to watch the project on GitHub to receive notifications for new
+releases.
 
 [project issue tracker]: https://github.com/jefferyto/gedit-tab-group-salute/issues
 
@@ -15,7 +18,7 @@ This plugin requires gedit 3.12 or newer.
 
 ## Installation
 
-1.  Download the [latest release][] and extract.
+1.  Download the [latest release] and extract.
 2.  Copy the `tab-group-salute` folder and the `tab-group-salute.plugin`
     file into `~/.local/share/gedit/plugins` (create if it does not
     exist).
@@ -40,7 +43,7 @@ produces the tilde symbol.
 
 ## Contributing
 
-The code in `tab-group-salute/utils` comes from [python-gtk-utils][];
+The code in `tab-group-salute/utils` comes from [python-gtk-utils];
 changes should ideally be contributed to that project, then pulled back
 into this one with `git subtree pull`.
 
@@ -50,7 +53,7 @@ into this one with `git subtree pull`.
 
 Inspired by:
 
-*   A [request for help][] with [Control Your Tabs][]
+*   A [request for help] with [Control Your Tabs]
 
 [request for help]: https://github.com/jefferyto/gedit-control-your-tabs/issues/11
 [Control Your Tabs]: https://github.com/jefferyto/gedit-control-your-tabs
