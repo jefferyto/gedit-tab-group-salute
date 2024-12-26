@@ -63,3 +63,18 @@ Inspired by:
 Copyright © 2018 Jeffery To <jeffery.to@gmail.com>
 
 Available under GNU General Public License version 3
+
+## Other plugins you may like
+
+*   [Control Your Tabs]  
+    Switch between document tabs using Ctrl+Tab and other common keyboard shortcuts
+
+*   [Ex-Mortis]  
+    Reopen closed windows and optionally restore windows between sessions
+
+*   [Python Console]  
+    Interactive Python console standing in the bottom panel
+
+[Control Your Tabs]: https://github.com/jefferyto/gedit-control-your-tabs
+[Ex-Mortis]: https://github.com/jefferyto/gedit-ex-mortis
+[Python Console]: https://github.com/jefferyto/gedit-pythonconsole
