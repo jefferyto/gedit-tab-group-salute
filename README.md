@@ -23,7 +23,7 @@ This plugin requires gedit 3.12 or newer.
     file into `~/.local/share/gedit/plugins` (create if it does not
     exist).
 3.  Restart gedit, then activate the plugin in the **Plugins** tab in
-    gedit's **Preferences** window.
+    gedit’s **Preferences** window.
 
 [latest release]: https://github.com/jefferyto/gedit-tab-group-salute/releases/latest
 
@@ -60,6 +60,6 @@ Inspired by:
 
 ## License
 
-Copyright &copy; 2018 Jeffery To <jeffery.to@gmail.com>
+Copyright © 2018 Jeffery To <jeffery.to@gmail.com>
 
 Available under GNU General Public License version 3
