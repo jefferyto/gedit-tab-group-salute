@@ -2,7 +2,7 @@
 
 Switch between tab groups using Ctrl+\<key above Tab\>  
 <https://github.com/jefferyto/gedit-tab-group-salute>  
-0.2.3-dev
+0.3.0
 
 All bug reports, feature requests, and miscellaneous comments are
 welcome at the [project issue tracker].
