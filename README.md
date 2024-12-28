@@ -62,7 +62,7 @@ Inspired by:
 
 Copyright © 2018 Jeffery To <jeffery.to@gmail.com>
 
-Available under GNU General Public License version 3
+Available under GNU General Public License version 2 or later
 
 ## Other plugins you may like
 

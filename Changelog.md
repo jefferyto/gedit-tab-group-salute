@@ -1,6 +1,7 @@
 # Changelog
 
 ## [0.2.3-dev][Unreleased] - Unreleased
+* Changed license to GPL-2.0-or-later
 
 ## [0.2.2] - 2018-11-10
 * Fixed description in .plugin file
