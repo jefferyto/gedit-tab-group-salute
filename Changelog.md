@@ -1,5 +1,7 @@
 # Changelog
 
+## [0.3.1-dev][Unreleased] - Unreleased
+
 ## [0.3.0] - 2024-12-29
 * Changed license to GPL-2.0-or-later
 
@@ -17,6 +19,7 @@
 * Initial release
 
 
+[Unreleased]: https://github.com/jefferyto/gedit-tab-group-salute/compare/0.3.0...main
 [0.3.0]: https://github.com/jefferyto/gedit-tab-group-salute/compare/0.2.2...0.3.0
 [0.2.2]: https://github.com/jefferyto/gedit-tab-group-salute/compare/0.2.1...0.2.2
 [0.2.1]: https://github.com/jefferyto/gedit-tab-group-salute/compare/0.2.0...0.2.1
