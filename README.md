@@ -53,9 +53,9 @@ into this one with `git subtree pull`.
 
 Inspired by:
 
-*   A [request for help] with [Control Your Tabs]
+*   A [request] from [Control Your Tabs]
 
-[request for help]: https://github.com/jefferyto/gedit-control-your-tabs/issues/11
+[request]: https://github.com/jefferyto/gedit-control-your-tabs/issues/11
 [Control Your Tabs]: https://github.com/jefferyto/gedit-control-your-tabs
 
 ## License
