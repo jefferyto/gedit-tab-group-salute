@@ -44,7 +44,7 @@ class TabGroupSaluteWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 		GObject.Object.__init__(self)
 
 	def do_activate(self):
-		if log.query(log.INFO):
+		if log.query(log.DEBUG):
 			Gedit.debug_plugin_message(log.format("%s", self.window))
 
 		connect_handlers(
@@ -54,7 +54,7 @@ class TabGroupSaluteWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 		)
 
 	def do_deactivate(self):
-		if log.query(log.INFO):
+		if log.query(log.DEBUG):
 			Gedit.debug_plugin_message(log.format("%s", self.window))
 
 		disconnect_handlers(self, self.window)
@@ -64,7 +64,7 @@ class TabGroupSaluteWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
 
 	def on_window_key_press_event(self, window, event):
-		if log.query(log.INFO):
+		if log.query(log.DEBUG):
 			Gedit.debug_plugin_message(log.format("%s, key=%s", window, Gdk.keyval_name(event.keyval)))
 
 		# we assume the key above tab has the keycode 49
@@ -72,7 +72,7 @@ class TabGroupSaluteWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
 		if event.hardware_keycode != 49:
 			if log.query(log.DEBUG):
-				Gedit.debug_plugin_message(log.format("keycode is %s, skipping", event.hardware_keycode))
+				Gedit.debug_plugin_message(log.format("Keycode is %s, skipping", event.hardware_keycode))
 
 			return False
 
@@ -86,12 +86,12 @@ class TabGroupSaluteWindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
 		if action_name is None:
 			if log.query(log.DEBUG):
-				Gedit.debug_plugin_message(log.format("neither ctrl nor ctrl+shift held, skipping"))
+				Gedit.debug_plugin_message(log.format("Neither Ctrl nor Ctrl-Shift held, skipping"))
 
 			return False
 
-		if log.query(log.DEBUG):
-			Gedit.debug_plugin_message(log.format("activating %s", action_name))
+		if log.query(log.INFO):
+			Gedit.debug_plugin_message(log.format("Activating %s", action_name))
 
 		window.lookup_action(action_name).activate()
 
